@@ -40,7 +40,7 @@ class Metronome {
             do {
                 try session.setActive(true)
                 //try session.overrideOutputAudioPort(AVAudioSession.PortOverride.none)
-                try session.setCategory(AVAudioSession.Category.playback, options: [.defaultToSpeaker, .allowAirPlay, .allowBluetoothA2DP])
+                // try session.setCategory(AVAudioSession.Category.playback, options: [.defaultToSpeaker, .allowAirPlay, .allowBluetoothA2DP])
             } catch {
                 print(error)
             }
