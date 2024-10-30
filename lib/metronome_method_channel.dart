@@ -234,11 +234,6 @@ class MethodChannelMetronome extends MetronomePlatform {
   }
 
   @override
-  void setOnBeatCountListener(Function(int count) onBeatCount) {
-    _beatCountHandler = onBeatCount;
-  }
-
-  @override
   Future<void> destroy() async {
     try {
       await methodChannel.invokeMethod<void>('destroy');

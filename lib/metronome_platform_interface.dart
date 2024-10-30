@@ -98,12 +98,6 @@ abstract class MetronomePlatform extends PlatformInterface {
     throw UnimplementedError('isCountingActive() has not been implemented.');
   }
 
-  /// 비트 카운트 결과 리스너 설정
-  void setOnBeatCountListener(Function(int count) onBeatCount) {
-    throw UnimplementedError(
-        'setOnBeatCountListener() has not been implemented.');
-  }
-
   Future<void> destroy() {
     throw UnimplementedError('destroy() has not been implemented.');
   }

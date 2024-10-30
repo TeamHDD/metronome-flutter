@@ -48,13 +48,8 @@ class Metronome {
         UIApplication.shared.beginReceivingRemoteControlEvents()
 #endif
     }
-    // public func enableTickCallback(_eventTickSink: EventTickHandler) {
-    //    beatTimer = BeatTimer(eventTick: _eventTickSink)
-    // }
-
-    public func enableTickCallback(_eventTickSink: EventTickHandler, onBeatCount: @escaping (Int) -> Void) {
-        beatCountCallback = onBeatCount
-        beatTimer = BeatTimer(eventTick: _eventTickSink)
+    public func enableTickCallback(_eventTickSink: EventTickHandler) {
+       beatTimer = BeatTimer(eventTick: _eventTickSink)
     }
     
     public func startCounting() {

@@ -53,16 +53,6 @@ class Metronome {
     return MetronomePlatform.instance.isCountingActive();
   }
 
-  /// Set a listener for beat count results
-  /// ```dart
-  /// metronome.setOnBeatCountListener((count) {
-  ///   print('Beat count: $count');
-  /// });
-  /// ```
-  void setOnBeatCountListener(Function(int count) onBeatCount) {
-    MetronomePlatform.instance.setOnBeatCountListener(onBeatCount);
-  }
-
   ///play the metronome
   Future<void> play(int bpm) async {
     return MetronomePlatform.instance.play(bpm);

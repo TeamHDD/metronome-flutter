@@ -106,11 +106,8 @@ public class MetronomePlugin: NSObject, FlutterPlugin {
             let enableSession: Bool = (attributes?["enableSession"] as? Bool) ?? true
             let enableTickCallback: Bool = (attributes?["enableTickCallback"] as? Bool) ?? true
             metronome =  Metronome( mainFile: mainFileUrl,accentedFile: mainFileUrl,enableSession:enableSession)
-            if enableTickCallback {
-                // 수정된 부분: beatCount 콜백 추가
-                metronome?.enableTickCallback(_eventTickSink: eventTickListener) { [weak self] count in
-                    self?.channel?.invokeMethod("onBeatCount", arguments: ["count": count])
-                }
+            if(enableTickCallback){
+                metronome?.enableTickCallback(_eventTickSink: eventTickListener);
             }
             setVolume(attributes: attributes)
             setBPM(attributes: attributes)
