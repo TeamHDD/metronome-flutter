@@ -22,9 +22,7 @@ class BeatTimer {
             self.eventTick.send(res: true)
             
             if self.isCounting {
-                self.beatCount += 1
-                print("Beat count: \(self.beatCount)")
-                
+                self.beatCount += 1                
             }
         }
     }
