@@ -51,6 +51,25 @@ class Metronome {
     public func enableTickCallback(_eventTickSink: EventTickHandler) {
        beatTimer = BeatTimer(eventTick: _eventTickSink)
     }
+
+    public func startCounting() {
+        beatTimer?.handleStateChange(isStart: true, isEnd: false)
+    }
+    
+    public func stopCounting() {
+        beatTimer?.handleStateChange(isStart: false, isEnd: true)
+    }
+
+    // 현재 카운트 값을 반환하는 메서드 추가
+    public func getCurrentBeatCount() -> Int {
+        return beatTimer?.currentCount ?? 0
+    }
+    
+    // 현재 카운팅 중인지 여부를 반환하는 메서드 추가
+    public func isCountingActive() -> Bool {
+        return beatTimer?.isCountingActive ?? false
+    }
+
     private func generateBuffer(bpm: Int) -> AVAudioPCMBuffer {
 
         audioFileMain.framePosition = 0

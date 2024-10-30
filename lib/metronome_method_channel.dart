@@ -184,6 +184,56 @@ class MethodChannelMetronome extends MetronomePlatform {
   }
 
   @override
+  Future<void> startCounting() async {
+    try {
+      await methodChannel.invokeMethod<bool>('startCounting');
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    }
+  }
+
+  @override
+  Future<void> stopCounting() async {
+    try {
+      await methodChannel.invokeMethod<bool>('stopCounting');
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    }
+  }
+
+  @override
+  Future<int> getCurrentBeatCount() async {
+    try {
+      final count =
+          await methodChannel.invokeMethod<int>('getCurrentBeatCount');
+      return count ?? 0;
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+      return 0;
+    }
+  }
+
+  @override
+  Future<bool> isCountingActive() async {
+    try {
+      final isActive =
+          await methodChannel.invokeMethod<bool>('isCountingActive');
+      return isActive ?? false;
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+      return false;
+    }
+  }
+
+  @override
   Future<void> destroy() async {
     try {
       await methodChannel.invokeMethod<void>('destroy');
