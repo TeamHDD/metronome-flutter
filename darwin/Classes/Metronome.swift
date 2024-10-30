@@ -154,6 +154,7 @@ class Metronome {
         audioEngine.detach(audioPlayerNode)
         if(beatTimer != nil){
             beatTimer?.stopBeatTimer()
+            beatTimer.resetCount()
         }
     }
     func setAudioFile(mainFile: URL) {
