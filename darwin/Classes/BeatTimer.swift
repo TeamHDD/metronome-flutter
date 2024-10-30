@@ -23,6 +23,8 @@ class BeatTimer {
             
             if self.isCounting {
                 self.beatCount += 1
+                print("Beat count: \(self.beatCount)")
+                
             }
         }
     }
