@@ -78,6 +78,26 @@ abstract class MetronomePlatform extends PlatformInterface {
         'saveAudioAssetsToLocal() has not been implemented.');
   }
 
+  /// 비트 카운팅 시작
+  Future<void> startCounting() {
+    throw UnimplementedError('startCounting() has not been implemented.');
+  }
+
+  /// 비트 카운팅 종료
+  Future<void> stopCounting() {
+    throw UnimplementedError('stopCounting() has not been implemented.');
+  }
+
+  /// 현재 비트 카운트 가져오기
+  Future<int> getCurrentBeatCount() {
+    throw UnimplementedError('getCurrentBeatCount() has not been implemented.');
+  }
+
+  /// 카운팅 활성화 상태 확인
+  Future<bool> isCountingActive() {
+    throw UnimplementedError('isCountingActive() has not been implemented.');
+  }
+
   Future<void> destroy() {
     throw UnimplementedError('destroy() has not been implemented.');
   }

@@ -65,6 +65,23 @@ public class MetronomePlugin: NSObject, FlutterPlugin {
               case "destroy":
                   metronome?.destroy()
                 break;
+              // Counting methods
+              case "startCounting":
+                  metronome?.startCounting()
+                  result(true)
+                  break
+              case "stopCounting":
+                  metronome?.stopCounting()
+                  result(true)
+                  break
+              case "getCurrentBeatCount":
+                  let count = metronome?.getCurrentBeatCount() ?? 0
+                  result(count)
+                  break
+              case "isCountingActive":
+                  let isActive = metronome?.isCountingActive() ?? false
+                  result(isActive)
+                  break
               default:
                   result("unkown")
                 break;
