@@ -33,6 +33,36 @@ class Metronome {
     );
   }
 
+  /// Start counting beats
+  Future<void> startCounting() async {
+    return MetronomePlatform.instance.startCounting();
+  }
+
+  /// Stop counting beats and get the final count
+  Future<void> stopCounting() async {
+    return MetronomePlatform.instance.stopCounting();
+  }
+
+  /// Get current beat count
+  Future<int> getCurrentBeatCount() async {
+    return MetronomePlatform.instance.getCurrentBeatCount();
+  }
+
+  /// Check if beat counting is active
+  Future<bool> isCountingActive() async {
+    return MetronomePlatform.instance.isCountingActive();
+  }
+
+  /// Set a listener for beat count results
+  /// ```dart
+  /// metronome.setOnBeatCountListener((count) {
+  ///   print('Beat count: $count');
+  /// });
+  /// ```
+  void setOnBeatCountListener(Function(int count) onBeatCount) {
+    MetronomePlatform.instance.setOnBeatCountListener(onBeatCount);
+  }
+
   ///play the metronome
   Future<void> play(int bpm) async {
     return MetronomePlatform.instance.play(bpm);
