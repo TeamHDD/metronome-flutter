@@ -129,8 +129,8 @@ class Metronome {
         audioBpm = bpm
         if audioPlayerNode.isPlaying {
             play(bpm: self.audioBpm)
-            if(beatTimer != nil){
-                beatTimer.startBeatTimer(bpm: bpm) { [weak self] count in
+            if let timer = beatTimer {
+                timer.startBeatTimer(bpm: bpm) { [weak self] count in
                     self?.beatCountCallback?(count)
                 }
             }
