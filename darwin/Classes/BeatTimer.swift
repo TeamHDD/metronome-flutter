@@ -15,6 +15,7 @@ class BeatTimer {
     
     func startBeatTimer(bpm: Int) {
         stopBeatTimer()
+        resetCount()
         let timerIntervallInSamples = 60 / Double(bpm)
         
         beatTimer = Timer.scheduledTimer(withTimeInterval: timerIntervallInSamples, repeats: true) { [weak self] timer in
@@ -33,7 +34,7 @@ class BeatTimer {
         guard beatTimer != nil else { return }
         beatTimer?.invalidate()
         beatTimer = nil
-        resetCount()
+        // resetCount()
     }
     
     func handleStateChange(isStart: Bool, isEnd: Bool) {
