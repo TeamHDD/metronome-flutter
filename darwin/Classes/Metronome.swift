@@ -11,6 +11,7 @@ class Metronome {
     //var
     public var audioBpm: Int = 120
     public var audioVolume: Float = 0
+    private var beatCountCallback: ((Int) -> Void)?
     //
     
     init(mainFile: URL,accentedFile: URL,enableSession: Bool) {
@@ -129,7 +130,9 @@ class Metronome {
         if audioPlayerNode.isPlaying {
             play(bpm: self.audioBpm)
             if(beatTimer != nil){
-                beatTimer?.startBeatTimer(bpm: bpm)
+                beatTimer.startBeatTimer(bpm: bpm) { [weak self] count in
+                    self?.beatCountCallback?(count)
+                }
             }
         }
     }
