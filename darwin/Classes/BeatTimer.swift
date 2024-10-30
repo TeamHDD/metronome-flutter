@@ -31,7 +31,7 @@ class BeatTimer {
         guard beatTimer != nil else { return }
         beatTimer?.invalidate()
         beatTimer = nil
-        resetCount()
+        // resetCount()
     }
     
     func handleStateChange(isStart: Bool, isEnd: Bool) {

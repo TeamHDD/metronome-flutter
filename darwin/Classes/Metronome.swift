@@ -114,15 +114,15 @@ class Metronome {
     }
     func pause() {
         audioPlayerNode.pause()
-        if(beatTimer != nil){
-            beatTimer?.stopBeatTimer()
-        }
+        // if(beatTimer != nil){
+        //     beatTimer?.stopBeatTimer()
+        // }
     }
     func stop() {
         audioPlayerNode.stop()
-        if(beatTimer != nil){
-            beatTimer?.stopBeatTimer()
-        }
+        // if(beatTimer != nil){
+        //     beatTimer?.stopBeatTimer()
+        // }
     }
     func setBPM(bpm: Int) {
         audioBpm = bpm
